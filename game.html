@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/game.css">
+    
+    
+    
+</head>
+<body>
+    <nav class="menu">
+        <span class="logo"><u> EmmaJNR</u></span>
+        <span><img src="img/close.png" class="span-image" alt=""></span>
+    </nav>
+
+    <main class="seniorholder">
+        <div class="modal-holder">
+        <div class="modal" id="second-modal">
+            <p class="modal-text">YOU GOT IT WRONG</p>
+            <!-- <span> -->
+                <button onclick="next()" class="next2">NEXT</button>
+            <!-- </span> -->
+        </div>
+            
+        <div class="modal" id="first-modal">
+            <p class="modal-text">YOU GOT IT RIGHT</p>
+            <button onclick="next()" class="next2">NEXT</button>
+        </div>
+        </div>
+
+        <h2>Quiz</h2>
+
+        <section>
+        <div class="reduce" id="increase">
+        <div class="container">
+        <table>
+            <tr>
+                <td id="questNo"></td>
+                <td id="totalNo"></td>
+            </tr>
+        </table>
+        </div>
+        <div class="empty"></div>
+            <div class="labelandInput-container">
+                <label for="answer">Answer</label>
+                <input type="text" name="answer" class="content">
+            </div>
+            <div class="container">
+            <button onclick="submission()" class="submit-button">Submit</button>
+            </div>
+        </div>
+        </section>
+    </main>
+   
+
+  
+    <script>
+        let questions = [
+            
+            {Que : 'Which animal is known as the ship of the forest', ans : 'camel'},
+            
+            {Que : 'what is the name given to a baby frog', ans : 'tadpole'},
+            
+            {Que : 'what is the name of the national bird of india', ans : 'peacock'},
+            
+            {Que : 'How many bones does a human body have', ans:'206'},
+            
+            {Que : 'How many teeth deos the adult mouth have', ans : '32'},
+
+            {Que : 'Which continent is the largest', ans : 'asia'},
+
+            {Que : 'Which country was paper invented', ans : 'china'},
+
+            {Que : 'What percentage of the earth is water', ans : '70%'},
+
+            {Que : 'The koran is the holy book of what religion', ans : 'islam'},
+
+            {Que : 'On what continent is the country egypt', ans : 'africa'}
+        ]
+
+        let userScore = 0
+
+        let spanimage = document.querySelector(".span-image")
+        let body = document.querySelector("body")
+        spanimage.addEventListener("click", closeALL)
+        function closeALL(e){
+            body.style.display = "none"
+        }
+
+
+
+
+        function initialModal(){
+            let modal = document.querySelector("#first-modal")
+            modal.style.display ="block"
+           
+
+        }
+
+        function lastModal(){
+            let modal = document.querySelector("#second-modal")
+            modal.style.display ="block"    
+        }
+
+
+        // function next(){
+        //     let currquest = questions[currentindex]
+        //     let empty = document.querySelector('.empty')
+        //     empty.innerText = currquest.Que
+        //     currentanswer = currquest.ans
+        //     let input = document.querySelector('input').value = '' 
+            
+            
+        //     let modal = document.querySelector("#first-modal")
+        //     let button = document.querySelector(".next2")
+        //     button.addEventListener("click", exit)
+        //     function exit(){
+        //         modal.style.display = "none"
+        //         console.log(123)
+        //         if(currquest === input){
+        //             currentindex++
+        //         }
+        //     }
+        // }
+
+
+        function next(){
+            let currquest = questions[currentindex]
+            let empty = document.querySelector('.empty')
+            empty.innerText = currquest.Que
+            currentanswer = currquest.ans
+            currentindex++
+            // If at the end of the quiz
+            if(currentindex === questions.length){
+                let finalScore = (userScore) * 2
+                // Hide modals
+                let modal = document.querySelector("#first-modal")
+                modal.style.display = "none"
+                
+                modal = document.querySelector("#second-modal")
+                modal.classList.add('second-modal')
+                modal.innerHTML = `You scored ${finalScore} Of ${questions.length * 2}`
+                // modal.style.display = "none"    
+                
+            
+                return 
+            }
+
+            let input = document.querySelector('input')
+            input.value = ''
+            showQuestion()
+
+            let modal = document.querySelector("#first-modal")
+            modal.style.display = "none"
+            
+            modal = document.querySelector("#second-modal")
+            modal.style.display = "none"    
+        }
+
+        let currentanswer = ""
+        let currentindex = 0
+
+        showQuestion()
+        function showQuestion(){
+            console.log(123)
+            // 
+            let questNo = document.querySelector('#questNo')
+            questNo.innerText = currentindex + 1
+
+            let totalNo = document.querySelector('#totalNo')
+            totalNo.innerText = questions.length
+            currquest = questions[currentindex]
+            let empty = document.querySelector('.empty')
+            empty.innerText = currquest.Que
+            console.log(empty)
+            currentanswer = currquest.ans    
+        }
+
+        
+        function submission(){
+            let input = document.querySelector('input').value
+            if (input.length === 0){
+                // alert('Please  anser before ')
+                return
+            }
+            if(input === currquest.ans){
+                userScore += 1 // Increase user score only if correct
+                initialModal()
+            }else{
+                lastModal()
+            }
+
+
+            if(input === ""){
+               
+            }
+            
+        }
+            
+    </script>
+            
+            
+
+        
+
+
+            
+
+            
+
+
+            
+
+            
+
+        
+
+
+    <script>  
+
+    
+    
+    //    let idx = 0
+    //    window.onload = showquestion
+    //    function showquestion(){
+        //        let empty = document.querySelector('.empty')
+    //        let p = document.createElement('p')
+    //        p.innerText = `${questions[idx].Que}`
+    //        empty.append(p)
+    //    }
+    
+    
+    
+    
+    
+    
+    //    closemodal()
+
+       
+        
+
+       
+        
+
+       
+        // function redo(){
+        //     let input = document.querySelector('input').value
+        //     let modal = document.querySelector(".reverse-modal")
+        //     let modality = document.querySelector(".current-modal")
+        //     if(input < 0){
+            //         modal.style.display = "none"    
+        //     }
+        
+        //     if(modality < 0){
+            //         modality.style.display = "none" 
+        //     }
+        //     // return
+        //     // else{}
+        // }
+        
+        
+        //   if(currentindex > questions.length){
+        //       alert('you have come to end of the game')
+        //       return
+        //   }
+        // document.querySelector('input').value = ''
+         
+        
+        //   function next(){
+           //let currquest = questions[currentindex]
+    //     let empty = document.querySelector('.empty')
+    //     empty.innerText = currquest.Que
+    //     currentanswer = currquest.ans
+    //     let input = document.querySelector('input').value
+        // document.querySelector('input').value = ''
+        // if(){
+            //     currentindex++ 
+            
+            // } 
+            // return
+            
+   
+            // }
+        </script>     
+        </body>
+        </html>
+       

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: absolute;
+            margin: 0;
+            background-color: ghostwhite;
+            transform: translate(50%,-50%);
+            top: 50%;
+            right: 50%;
+            /* align-items: center; */
+
+        }
+        .start-button{
+            margin: 0;
+            border: 1px solid transparent;
+            width: 8rem;
+            background-color: transparent;
+            font-size: 1.01rem;
+            height: 50px;
+            cursor: pointer;
+            box-shadow:  1px 4px 8px rgba(0, 0, 0, 0.358);
+              /* 1px 4px 8px rgba(0, 0, 0, 0.516); */
+        }
+
+        h1{
+            text-align: center;
+            color: #fff;
+            font-size: 2.5rem;
+            font-family: verdana;
+            text-shadow: 1px 1px 1px #919191,
+            1px 2px 1px #919191,
+            1px 3px 1px #919191,
+            1px 4px 1px #919191,
+            1px 5px 1px #919191,
+            1px 6px 1px #919191,
+            1px 7px 1px #919191,
+            1px 8px 1px #919191,
+            1px 9px 1px #919191,
+            1px 10px 1px #919191,
+            1px 18px 6px rgba(16, 16, 16, 0.4),
+            1px 22px 10px rgba(16, 16, 16, 0.2),
+            1px 25px 35px rgba(16, 16, 16, 0.2),
+            1px 36px 40px rgba(16, 16, 16, 0.4),
+            1px 50px 45px rgba(16, 16, 16, 0.4),
+            1px 75px 80px rgba(16, 16, 16, 0.4);
+        }
+         /* h1{
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            font-family: verdana;
+            text-shadow: 1px 1px 1px #cfcece,
+            1px 2px 1px white,
+            1px 3px 1px #cfcece,
+            1px 4px 1px #cfcece,
+            1px 5px 1px #cfcece,
+            1px 6px 1px #cfcece,
+            1px 7px 1px #cfcece,
+            1px 8px 1px #cfcece,
+            1px 9px 1px #cfcece,
+            1px 10px 1px #cfcece,
+            1px 18px 6px rgba(16, 16, 16, 0.4),
+            1px 22px 10px rgba(16, 16, 16, 0.2),
+            1px 25px 35px rgba(16, 16, 16, 0.2),
+            1px 36px 40px rgba(16, 16, 16, 0.4);
+
+        }  */
+
+        .mother{
+            width: 100%;
+            /* border: 1px solid blue; */
+            /* margin-top: 200px; */
+        }
+
+        .functional-btn{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        img{
+            width: inherit;
+            /* transform: translate(120%); */
+            /* left: 50%; */
+
+            /* position: relative; */
+
+            /* height: 20px; */
+
+        }
+
+    </style>
+            
+
+</head>
+<body>
+    <div class="mother">
+        <img src="../img/Preview-removebg-preview.png" alt="">
+        <h1>YOU ARE WELCOME !!!</h1>
+        <div class="functional-btn">
+          <button class="start-button">Start Quiz</button>
+        </div>
+    </div>
+        
+        
+
+    <script>
+        let btn = document.querySelector(".start-button")
+        btn.onclick = changeloc
+        function changeloc(){
+            window.location.href = "./game.html"
+            
+        }
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+
+
+body{
+    margin: 0;
+    /* display: flex;
+    justify-content: center;  */
+}
+
+
+
+nav{
+    /* position: fixed; */
+    margin: 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: 0px 5px 4px rgba(70, 70, 70, 0.342);
+}
+
+nav:hover{
+    cursor: pointer;
+}
+.logo{
+    margin: 0;
+    padding: 0;
+    font-weight: 900;
+    padding: 10px;
+    font-size: x-large;
+    color: goldenrod;
+    font-family: 'Pinyon Script', cursive;
+}
+
+
+h2{
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    color: #333232;
+    font-size: 3rem;
+}
+
+table, tr, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 10rem;
+    height: 40px;
+    background-color: transparent;
+    text-align: center;
+    font-weight: bold
+    /* border-bottom: 1px solid black; */
+}
+.empty{
+    margin: 0;
+    padding: 0;
+    border: 1px solid transparent ;
+    background-color: rgb(1, 1, 31);
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: ghostwhite;
+    height: 150px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    word-wrap: break-word;
+    font-size: 1.1rem;
+}
+.seniorholder{
+    display: block;
+}
+
+.labelandInput-container{
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
+    padding: 30px;
+    display: block;   
+}
+
+input{
+    margin: 0;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid silver;
+    font-size: 1.2em;
+}
+
+input:focus{
+    outline: none;
+    transform: translateY(-17px);
+    color: rgb(1, 1, 31);
+}
+label{
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    font-weight: lighter;
+    color: rgb(112, 106, 106);       
+}
+
+.submit-button{
+    margin: 0;
+    margin-top: 20px;
+    /* border-radius: 10px; */
+    border: 1px solid transparent;
+    background-color: rgb(2, 2, 28);
+    width: 8rem;
+    height: 6vh;
+    font-size: 1.01rem;
+    color: white;
+    cursor: pointer;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;  
+}
+
+#first-modal{
+    display: none;
+    margin: 0;
+    width: 250px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(29, 27, 27);
+   
+}
+#second-modal{
+    display: none;
+    margin: 0;
+    width: 250px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(29, 27, 27);
+}
+.second-modal{
+    display: flex !important;
+    justify-content: center!important;
+    align-items: center !important;
+    font-size: larger!important;
+    font-family: verdana !important;
+}
+
+
+
+
+
+
+
+
+
+/* .commands{
+    margin: 5px;
+    margin-top: 15px;
+    margin-left: 20px;
+    border: 1px solid transparent;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    border-radius: 7px;
+    width: 60px;
+    position: fixed;
+     margin-bottom: 15px;
+}  */
+
+
+.modal-text{
+    padding-top: 10px;
+    text-align: center;
+    font-size: large;
+    color: #2e2c2c;
+    font-family: fantasy;
+}
+
+
+.modal-holder{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    transform: translateY(40%)  
+}
+
+
+.next2{
+    margin: 0;
+    margin-right: 10px;
+    border: 1px solid transparent;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    border-radius: 7px;
+    float: right;
+}
+
+
+
+
+
+
+@media  screen and (max-width: 320px){
+    .empty{
+        width: 300px;
+        margin-left: 10px;
+    }
+    
+}
